@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NextStep – Career Guide</title>
+
+    <meta
+        name="description"
+        content="NextStep is a personalized career guidance platform for students."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">N</span>
+            <span>NextStep</span>
+        </a>
+
+        <nav class="nav" id="nav">
+
+            <a href="#home">Home</a>
+            <a href="#explorer">Careers</a>
+            <a href="#guidance">Guidance</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#resources">Resources</a>
+            <a href="#dashboard">Dashboard</a>
+
+        </nav>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            onclick="toggleMenu()"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <span class="badge">🎓 Personalized Career Guidance</span>
+
+            <h1>
+                Turn Career Confusion
+                <span>Into Your NextStep.</span>
+            </h1>
+
+            <p>
+                Discover the right education path, explore suitable careers,
+                build skills, track your progress, and plan your future
+                step-by-step.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="openProfileModal()"
+                >
+                    Create My Profile
+                </button>
+
+                <a href="#assessment" class="btn btn-secondary">
+                    Take Career Assessment
+                </a>
+
+            </div>
+
+            <div class="hero-trust">
+
+                <div>
+                    <strong>10th → PhD</strong>
+                    <span>Multiple education stages</span>
+                </div>
+
+                <div>
+                    <strong>20+</strong>
+                    <span>Career paths</span>
+                </div>
+
+                <div>
+                    <strong>Step-by-Step</strong>
+                    <span>Personalized planning</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="floating-card top-card">
+                <span>🎯</span>
+                <div>
+                    <strong>Career Match</strong>
+                    <small>DevOps • 92%</small>
+                </div>
+            </div>
+
+            <div class="student-card">
+
+                <div class="student-avatar">👨‍🎓</div>
+
+                <h3>Your Career Journey</h3>
+
+                <p>
+                    Build a clear path from education to your dream career.
+                </p>
+
+                <div class="journey-line">
+
+                    <div class="journey-step active">
+                        <span>1</span>
+                        Education
+                    </div>
+
+                    <div class="journey-step">
+                        <span>2</span>
+                        Skills
+                    </div>
+
+                    <div class="journey-step">
+                        <span>3</span>
+                        Projects
+                    </div>
+
+                    <div class="journey-step">
+                        <span>4</span>
+                        Career
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="floating-card bottom-card">
+
+                <span>📈</span>
+
+                <div>
+                    <strong>Roadmap Progress</strong>
+
+                    <div class="mini-progress">
+                        <span></span>
+                    </div>
+
+                    <small>65% completed</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="stat">
+            <strong>20+</strong>
+            <span>Career Paths</span>
+        </div>
+
+        <div class="stat">
+            <strong>6+</strong>
+            <span>Education Stages</span>
+        </div>
+
+        <div class="stat">
+            <strong>50+</strong>
+            <span>Skills & Topics</span>
+        </div>
+
+        <div class="stat">
+            <strong>100%</strong>
+            <span>Student Focused</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROFILE ================= -->
+
+<section class="section profile-section" id="profile">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">YOUR PROFILE</span>
+
+            <h2>
+                Start With
+                <span>Yourself</span>
+            </h2>
+
+            <p>
+                Tell NextStep about your education, interests, strengths and
+                goals so we can help you discover suitable paths.
+            </p>
+
+        </div>
+
+
+        <div class="profile-preview">
+
+            <div class="profile-icon">
+                👨‍🎓
+            </div>
+
+            <div class="profile-info">
+
+                <h3 id="profileName">Student Profile</h3>
+
+                <p id="profileSummary">
+                    Create your profile to receive personalized career
+                    recommendations.
+                </p>
+
+                <div class="profile-tags">
+
+                    <span id="educationTag">Education not selected</span>
+                    <span id="streamTag">Stream not selected</span>
+                    <span id="interestTag">Interests not selected</span>
+
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-primary"
+                onclick="openProfileModal()"
+            >
+                Edit Profile
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAREER EXPLORER ================= -->
+
+<section class="section light-section" id="explorer">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">CAREER EXPLORER</span>
+
+            <h2>
+                Explore Your
+                <span>Possibilities</span>
+            </h2>
+
+            <p>
+                Discover careers across technology, electronics, business,
+                government, research and higher studies.
+            </p>
+
+        </div>
+
+
+        <div class="career-filter">
+
+            <button
+                class="filter-btn active"
+                onclick="filterCareers('all', this)"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterCareers('technology', this)"
+            >
+                Technology
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterCareers('electronics', this)"
+            >
+                Electronics
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterCareers('business', this)"
+            >
+                Business
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterCareers('government', this)"
+            >
+                Government
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterCareers('higher', this)"
+            >
+                Higher Studies
+            </button>
+
+        </div>
+
+
+        <div class="career-grid" id="careerGrid">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAREER DETAILS ================= -->
+
+<section class="section" id="careerDetails">
+
+    <div class="container">
+
+        <div id="careerDetailsContent">
+
+            <div class="empty-state">
+
+                <div class="empty-icon">🧭</div>
+
+                <h3>Select a Career</h3>
+
+                <p>
+                    Choose a career above to see education requirements,
+                    skills, roles, salary, growth and roadmap.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ASSESSMENT ================= -->
+
+<section class="section assessment-section" id="assessment">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">CAREER ASSESSMENT</span>
+
+            <h2>
+                Discover What
+                <span>Fits You</span>
+            </h2>
+
+            <p>
+                Answer a few simple questions and NextStep will suggest career
+                areas that match your interests.
+            </p>
+
+        </div>
+
+
+        <div class="assessment-card">
+
+            <div class="assessment-progress">
+
+                <div>
+                    Question
+                    <strong id="questionNumber">1</strong>
+                    of 5
+                </div>
+
+                <div class="assessment-bar">
+                    <span id="assessmentProgress"></span>
+                </div>
+
+            </div>
+
+
+            <div id="questionContainer"></div>
+
+
+            <div class="assessment-actions">
+
+                <button
+                    class="btn btn-secondary"
+                    id="previousQuestion"
+                    onclick="previousQuestion()"
+                >
+                    Previous
+                </button>
+
+                <button
+                    class="btn btn-primary"
+                    id="nextQuestion"
+                    onclick="nextQuestion()"
+                >
+                    Next
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STREAM GUIDANCE ================= -->
+
+<section class="section light-section" id="guidance">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">EDUCATION GUIDANCE</span>
+
+            <h2>
+                Choose Your
+                <span>Next Education Step</span>
+            </h2>
+
+            <p>
+                Understand what you can choose after 10th, Intermediate,
+                Diploma and B.Tech.
+            </p>
+
+        </div>
+
+
+        <div class="guidance-tabs">
+
+            <button
+                class="guidance-tab active"
+                onclick="showGuidance('after10', this)"
+            >
+                After 10th
+            </button>
+
+            <button
+                class="guidance-tab"
+                onclick="showGuidance('after12', this)"
+            >
+                After Intermediate
+            </button>
+
+            <button
+                class="guidance-tab"
+                onclick="showGuidance('btech', this)"
+            >
+                B.Tech Branches
+            </button>
+
+        </div>
+
+
+        <div id="guidanceContent" class="guidance-content"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PERSONALIZED ROADMAP ================= -->
+
+<section class="section" id="roadmap">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">PERSONALIZED ROADMAP</span>
+
+            <h2>
+                Your Journey,
+                <span>Step-by-Step</span>
+            </h2>
+
+            <p>
+                Follow a clear sequence from education to skills, projects,
+                internships and your final career goal.
+            </p>
+
+        </div>
+
+
+        <div class="roadmap-wrapper">
+
+            <div class="roadmap-header">
+
+                <div>
+                    <span class="section-label">CURRENT GOAL</span>
+                    <h3 id="roadmapGoal">Become a Software Developer</h3>
+                </div>
+
+                <div class="roadmap-percent">
+                    <strong id="roadmapPercent">40%</strong>
+                    <span>completed</span>
+                </div>
+
+            </div>
+
+
+            <div class="progress-large">
+
+                <span id="roadmapProgressBar"></span>
+
+            </div>
+
+
+            <div class="roadmap-list" id="roadmapList">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="section light-section" id="skills">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">SKILL BUILDER</span>
+
+            <h2>
+                Skills That
+                <span>Move You Forward</span>
+            </h2>
+
+            <p>
+                Build practical skills according to your target career.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <span>🐧</span>
+                <h3>Linux</h3>
+                <p>Operating systems and command line fundamentals.</p>
+                <div class="skill-level">Beginner</div>
+            </div>
+
+            <div class="skill-card">
+                <span>🔧</span>
+                <h3>Git & GitHub</h3>
+                <p>Version control and collaborative development.</p>
+                <div class="skill-level">Beginner</div>
+            </div>
+
+            <div class="skill-card">
+                <span>🐳</span>
+                <h3>Docker</h3>
+                <p>Containerization and application deployment.</p>
+                <div class="skill-level">Intermediate</div>
+            </div>
+
+            <div class="skill-card">
+                <span>☸️</span>
+                <h3>Kubernetes</h3>
+                <p>Container orchestration and cloud-native systems.</p>
+                <div class="skill-level">Intermediate</div>
+            </div>
+
+            <div class="skill-card">
+                <span>⚙️</span>
+                <h3>Programming</h3>
+                <p>Build logical thinking and application development skills.</p>
+                <div class="skill-level">Beginner</div>
+            </div>
+
+            <div class="skill-card">
+                <span>📊</span>
+                <h3>Data Analysis</h3>
+                <p>Work with data, statistics and visualization.</p>
+                <div class="skill-level">Beginner</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESOURCES ================= -->
+
+<section class="section" id="resources">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">LEARNING RESOURCES</span>
+
+            <h2>
+                Learn With The
+                <span>Right Resources</span>
+            </h2>
+
+            <p>
+                Find courses, documentation, books, practice platforms and
+                project ideas.
+            </p>
+
+        </div>
+
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <div class="resource-icon">📚</div>
+                <h3>Courses</h3>
+                <p>Structured learning paths for beginners and students.</p>
+                <button onclick="showResource('courses')">
+                    Explore Courses →
+                </button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📖</div>
+                <h3>Documentation</h3>
+                <p>Official documentation and technical references.</p>
+                <button onclick="showResource('documentation')">
+                    Explore Docs →
+                </button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">💻</div>
+                <h3>Practice</h3>
+                <p>Platforms for coding, aptitude and technical practice.</p>
+                <button onclick="showResource('practice')">
+                    Practice →
+                </button>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🚀</div>
+                <h3>Projects</h3>
+                <p>Build projects that demonstrate your practical skills.</p>
+                <button onclick="showResource('projects')">
+                    Project Ideas →
+                </button>
+            </div>
+
+        </div>
+
+
+        <div id="resourceResults" class="resource-results"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= JOBS ================= -->
+
+<section class="section light-section" id="jobs">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">JOBS & INTERNSHIPS</span>
+
+            <h2>
+                Find Your
+                <span>First Opportunity</span>
+            </h2>
+
+            <p>
+                Explore example opportunities relevant to your skills and
+                career interests.
+            </p>
+
+        </div>
+
+
+        <div class="opportunity-grid">
+
+            <div class="opportunity-card">
+
+                <div class="company-logo">D</div>
+
+                <div class="opportunity-info">
+
+                    <span class="opportunity-type">INTERNSHIP</span>
+
+                    <h3>DevOps Intern</h3>
+
+                    <p>Cloud & Infrastructure • Remote</p>
+
+                    <div class="opportunity-tags">
+                        <span>Docker</span>
+                        <span>Linux</span>
+                        <span>Git</span>
+                    </div>
+
+                </div>
+
+                <button
+                    class="save-btn"
+                    onclick="toggleSave(this)"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+
+            <div class="opportunity-card">
+
+                <div class="company-logo">S</div>
+
+                <div class="opportunity-info">
+
+                    <span class="opportunity-type">FRESHER JOB</span>
+
+                    <h3>Software Developer</h3>
+
+                    <p>Software • Bengaluru</p>
+
+                    <div class="opportunity-tags">
+                        <span>Java</span>
+                        <span>SQL</span>
+                        <span>Git</span>
+                    </div>
+
+                </div>
+
+                <button
+                    class="save-btn"
+                    onclick="toggleSave(this)"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+
+            <div class="opportunity-card">
+
+                <div class="company-logo">A</div>
+
+                <div class="opportunity-info">
+
+                    <span class="opportunity-type">INTERNSHIP</span>
+
+                    <h3>Data Analyst Intern</h3>
+
+                    <p>Analytics • Hyderabad</p>
+
+                    <div class="opportunity-tags">
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>Excel</span>
+                    </div>
+
+                </div>
+
+                <button
+                    class="save-btn"
+                    onclick="toggleSave(this)"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SCHOLARSHIPS ================= -->
+
+<section class="section" id="scholarships">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">SCHOLARSHIP FINDER</span>
+
+            <h2>
+                Find Financial
+                <span>Support</span>
+            </h2>
+
+            <p>
+                Search scholarships based on your education and eligibility.
+            </p>
+
+        </div>
+
+
+        <div class="filter-panel">
+
+            <div class="form-group">
+
+                <label>Education Level</label>
+
+                <select id="scholarshipEducation">
+
+                    <option value="">All Levels</option>
+                    <option value="10th">10th</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="graduation">Graduation</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Category</label>
+
+                <select id="scholarshipCategory">
+
+                    <option value="">All Categories</option>
+                    <option value="merit">Merit</option>
+                    <option value="need">Need Based</option>
+                    <option value="minority">Minority</option>
+                    <option value="state">State</option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="searchScholarships()"
+            >
+                Find Scholarships
+            </button>
+
+        </div>
+
+
+        <div id="scholarshipResults" class="scholarship-results">
+
+            <div class="scholarship-card">
+
+                <span class="scholarship-badge">MERIT</span>
+
+                <h3>National Merit Scholarship</h3>
+
+                <p>
+                    Example scholarship opportunity for eligible students
+                    based on academic performance.
+                </p>
+
+                <div class="scholarship-meta">
+                    🎓 Undergraduate &nbsp; • &nbsp; 🏆 Merit
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GOVERNMENT CAREERS ================= -->
+
+<section class="section government-section" id="government">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">GOVERNMENT CAREERS</span>
+
+            <h2>
+                Explore
+                <span>Government Opportunities</span>
+            </h2>
+
+            <p>
+                Understand major government career paths, eligibility,
+                selection process and preparation.
+            </p>
+
+        </div>
+
+
+        <div class="government-grid">
+
+            <div class="government-card">
+
+                <span class="gov-icon">🏛️</span>
+
+                <h3>UPSC</h3>
+
+                <p>
+                    Civil services and other central government services.
+                </p>
+
+                <button onclick="showGovernment('UPSC')">
+                    View Path →
+                </button>
+
+            </div>
+
+
+            <div class="government-card">
+
+                <span class="gov-icon">📋</span>
+
+                <h3>SSC</h3>
+
+                <p>
+                    SSC CGL, CHSL, MTS and other major examinations.
+                </p>
+
+                <button onclick="showGovernment('SSC')">
+                    View Path →
+                </button>
+
+            </div>
+
+
+            <div class="government-card">
+
+                <span class="gov-icon">🏦</span>
+
+                <h3>Banking</h3>
+
+                <p>
+                    IBPS, SBI and other banking examination opportunities.
+                </p>
+
+                <button onclick="showGovernment('Banking')">
+                    View Path →
+                </button>
+
+            </div>
+
+
+            <div class="government-card">
+
+                <span class="gov-icon">🚆</span>
+
+                <h3>Railways</h3>
+
+                <p>
+                    Technical and non-technical railway career opportunities.
+                </p>
+
+                <button onclick="showGovernment('Railways')">
+                    View Path →
+                </button>
+
+            </div>
+
+
+            <div class="government-card">
+
+                <span class="gov-icon">🪖</span>
+
+                <h3>Defence</h3>
+
+                <p>
+                    NDA, CDS, AFCAT and defence career opportunities.
+                </p>
+
+                <button onclick="showGovernment('Defence')">
+                    View Path →
+                </button>
+
+            </div>
+
+
+            <div class="government-card">
+
+                <span class="gov-icon">⚡</span>
+
+                <h3>PSU</h3>
+
+                <p>
+                    Engineering and other opportunities in public sector
+                    organizations.
+                </p>
+
+                <button onclick="showGovernment('PSU')">
+                    View Path →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div id="governmentDetails"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COLLEGE EXPLORER ================= -->
+
+<section class="section light-section" id="colleges">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">COLLEGE & COURSE EXPLORER</span>
+
+            <h2>
+                Compare Your
+                <span>Study Options</span>
+            </h2>
+
+            <p>
+                Compare courses, locations, entrance requirements, fees and
+                career outcomes.
+            </p>
+
+        </div>
+
+
+        <div class="college-search">
+
+            <input
+                type="text"
+                id="collegeSearch"
+                placeholder="Search course or college..."
+            >
+
+            <select id="collegeLocation">
+
+                <option value="">All Locations</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Delhi">Delhi</option>
+
+            </select>
+
+            <button
+                class="btn btn-primary"
+                onclick="searchColleges()"
+            >
+                Search
+            </button>
+
+        </div>
+
+
+        <div id="collegeResults" class="college-grid"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= AI ASSISTANT ================= -->
+
+<section class="section assistant-section" id="assistant">
+
+    <div class="container">
+
+        <div class="assistant-layout">
+
+            <div class="assistant-intro">
+
+                <span class="section-label">AI CAREER ASSISTANT</span>
+
+                <h2>
+                    Ask About
+                    <span>Your Future</span>
+                </h2>
+
+                <p>
+                    Get personalized guidance about careers, skills, projects,
+                    higher studies and education transitions.
+                </p>
+
+                <div class="suggestion-list">
+
+                    <button onclick="askAssistant('I am an ECE student, what career options do I have?')">
+                        ECE career options
+                    </button>
+
+                    <button onclick="askAssistant('I do not like coding, what can I choose?')">
+                        Careers without coding
+                    </button>
+
+                    <button onclick="askAssistant('Can I move from ECE to Cloud?')">
+                        ECE → Cloud
+                    </button>
+
+                    <button onclick="askAssistant('What should I learn to become a VLSI Engineer?')">
+                        Become a VLSI Engineer
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="chat-box">
+
+                <div class="chat-header">
+
+                    <div class="assistant-avatar">
+                        ✨
+                    </div>
+
+                    <div>
+                        <strong>NextStep Assistant</strong>
+                        <small>Career Guidance</small>
+                    </div>
+
+                    <span class="online-dot"></span>
+
+                </div>
+
+
+                <div class="chat-messages" id="chatMessages">
+
+                    <div class="message assistant-message">
+
+                        <span>✨</span>
+
+                        <p>
+                            Hi! I'm your NextStep career assistant.
+                            Ask me about careers, skills, branches,
+                            higher studies or career transitions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chat-input">
+
+                    <input
+                        type="text"
+                        id="chatInput"
+                        placeholder="Ask your career question..."
+                        onkeydown="handleChatKey(event)"
+                    >
+
+                    <button onclick="sendMessage()">
+                        ➤
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="section dashboard-section" id="dashboard">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">STUDENT DASHBOARD</span>
+
+            <h2>
+                Your Personal
+                <span>NextStep</span>
+            </h2>
+
+            <p>
+                Everything important about your career journey in one place.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card dashboard-profile">
+
+                <div class="dashboard-card-header">
+
+                    <h3>My Profile</h3>
+
+                    <button onclick="openProfileModal()">
+                        Edit
+                    </button>
+
+                </div>
+
+                <div class="dashboard-profile-content">
+
+                    <div class="big-avatar">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <h3 id="dashboardName">Student</h3>
+
+                        <p id="dashboardEducation">
+                            Education not selected
+                        </p>
+
+                        <span class="goal-badge">
+                            🎯 Software Developer
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <h3>Roadmap Progress</h3>
+
+                    <span class="dashboard-number">40%</span>
+
+                </div>
+
+                <div class="dashboard-progress">
+
+                    <span></span>
+
+                </div>
+
+                <p>
+                    4 of 10 recommended steps completed.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <h3>Recommended Career</h3>
+
+                    <span>⭐</span>
+
+                </div>
+
+                <h3>Software Development</h3>
+
+                <p>
+                    Strong match based on your current profile.
+                </p>
+
+                <button
+                    class="text-btn"
+                    onclick="showCareer('Software Development')"
+                >
+                    Explore Career →
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <h3>Saved Careers</h3>
+
+                    <span>💾</span>
+
+                </div>
+
+                <div id="savedCareerList">
+                    <p>No saved careers yet.</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <h3>Applications</h3>
+
+                    <span>📄</span>
+
+                </div>
+
+                <div class="application-count">
+                    <strong>0</strong>
+                    <span>active applications</span>
+                </div>
+
+                <button class="text-btn">
+                    View Applications →
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card next-action-card">
+
+                <div class="dashboard-card-header">
+
+                    <h3>Next Recommended Action</h3>
+
+                    <span>👉</span>
+
+                </div>
+
+                <h3>Complete Git & GitHub Basics</h3>
+
+                <p>
+                    Learning Git will prepare you for your next roadmap step.
+                </p>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="scrollToSection('resources')"
+                >
+                    Start Learning
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="section light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">HOW NEXTSTEP WORKS</span>
+
+            <h2>
+                From Confusion
+                <span>To Clarity</span>
+            </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-card">
+
+                <div class="process-number">01</div>
+
+                <span>🎯</span>
+
+                <h3>Understand Yourself</h3>
+
+                <p>
+                    Create your student profile and identify interests,
+                    strengths and goals.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">02</div>
+
+                <span>🧭</span>
+
+                <h3>Explore Careers</h3>
+
+                <p>
+                    Discover careers that match your education and interests.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">03</div>
+
+                <span>📚</span>
+
+                <h3>Build Skills</h3>
+
+                <p>
+                    Follow courses, resources and projects recommended for
+                    your goal.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">04</div>
+
+                <span>🚀</span>
+
+                <h3>Take Your NextStep</h3>
+
+                <p>
+                    Move toward internships, jobs or higher studies with
+                    confidence.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about-section" id="about">
+
+    <div class="container about-grid">
+
+        <div>
+
+            <span class="section-label">ABOUT NEXTSTEP</span>
+
+            <h2>
+                Your Career Is A Journey,
+                <span>Not A Single Decision.</span>
+            </h2>
+
+        </div>
+
+        <div>
+
+            <p>
+                NextStep is designed to reduce career confusion by connecting
+                a student's current education, interests and goals to a
+                practical step-by-step plan.
+            </p>
+
+            <p>
+                Instead of simply telling students about careers, NextStep
+                helps them understand what they can do next, what skills they
+                need, what they should learn, what projects they can build,
+                and where that journey can lead.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <a href="#home" class="logo footer-logo">
+
+                <span class="logo-icon">N</span>
+                <span>NextStep</span>
+
+            </a>
+
+            <p>
+                Turning career confusion into a clear next step.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>Explore</h4>
+
+            <a href="#explorer">Careers</a>
+            <a href="#guidance">Education Guidance</a>
+            <a href="#roadmap">Roadmaps</a>
+            <a href="#resources">Resources</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Opportunities</h4>
+
+            <a href="#jobs">Jobs & Internships</a>
+            <a href="#scholarships">Scholarships</a>
+            <a href="#government">Government Careers</a>
+            <a href="#colleges">Colleges</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Platform</h4>
+
+            <a href="#dashboard">Dashboard</a>
+            <a href="#assistant">AI Assistant</a>
+            <a href="#assessment">Assessment</a>
+            <a href="#about">About</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+                © 2026 NextStep – Career Guide. Built for students.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= PROFILE MODAL ================= -->
+
+<div class="modal" id="profileModal">
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            onclick="closeProfileModal()"
+        >
+            ×
+        </button>
+
+        <span class="section-label">CREATE PROFILE</span>
+
+        <h2>Tell Us About Yourself</h2>
+
+        <p>
+            Your answers help NextStep provide better career recommendations.
+        </p>
+
+
+        <form id="profileForm" onsubmit="saveProfile(event)">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Education Level</label>
+
+                    <select id="educationLevel" required>
+
+                        <option value="">Select</option>
+                        <option value="10th">10th Standard</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="Higher Studies">Higher Studies</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Stream / Branch</label>
+
+                    <select id="studentStream">
+
+                        <option value="">Select</option>
+                        <option value="MPC">MPC</option>
+                        <option value="BiPC">BiPC</option>
+                        <option value="CEC">CEC</option>
+                        <option value="HEC">HEC</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Preferred Subject</label>
+
+                    <select id="preferredSubject">
+
+                        <option value="">Select</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Biology">Biology</option>
+                        <option value="Business">Business</option>
+                        <option value="Social Science">Social Science</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Your Interests</label>
+
+                <div class="checkbox-grid">
+
+                    <label class="check-option">
+                        <input type="checkbox" value="coding" name="interests">
+                        Coding
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="electronics" name="interests">
+                        Electronics
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="data" name="interests">
+                        Data
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="business" name="interests">
+                        Business
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="government" name="interests">
+                        Government
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="research" name="interests">
+                        Research
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Career Goal</label>
+
+                <select id="careerGoal">
+
+                    <option value="">Not sure yet</option>
+                    <option value="Software Development">
+                        Software Development
+                    </option>
+                    <option value="AI/ML">
+                        AI / ML
+                    </option>
+                    <option value="Data Analytics">
+                        Data Analytics
+                    </option>
+                    <option value="DevOps">
+                        DevOps
+                    </option>
+                    <option value="Cloud Computing">
+                        Cloud Computing
+                    </option>
+                    <option value="Cybersecurity">
+                        Cybersecurity
+                    </option>
+                    <option value="VLSI">
+                        VLSI
+                    </option>
+                    <option value="Government Jobs">
+                        Government Jobs
+                    </option>
+                    <option value="Research">
+                        Research
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button class="btn btn-primary full-btn">
+                Save My Profile
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CAREER MODAL ================= -->
+
+<div class="modal" id="careerModal">
+
+    <div class="modal-content large-modal">
+
+        <button
+            class="modal-close"
+            onclick="closeCareerModal()"
+        >
+            ×
+        </button>
+
+        <div id="careerModalContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
