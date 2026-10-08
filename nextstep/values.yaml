@@ -1,0 +1,26 @@
+replicaCount: 2
+
+image:
+  repository: swaroop56/nextstep-career-guide
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+
+ingress:
+  enabled: false
+
+httpRoute:
+  enabled: false
+
+autoscaling:
+  enabled: false
+
+service:
+  type: NodePort
+  port: 80
+
+resources: {}

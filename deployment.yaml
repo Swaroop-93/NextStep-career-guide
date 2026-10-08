@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextstep-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nextstep
+  template:
+    metadata:
+      labels:
+        app: nextstep
+    spec:
+      containers:
+        - name: nextstep
+          image: swaroop56/nextstep-career-guide:latest
+          ports:
+            - containerPort: 80
