@@ -654,7 +654,7 @@ This project demonstrates practical knowledge of **CI/CD, containerization, Kube
 
 # 👨‍💻 Author
 
-**Swaroop**
+**Swaroop Makina**
 
 GitHub:  
 https://github.com/Swaroop-93/NextStep-career-guide
