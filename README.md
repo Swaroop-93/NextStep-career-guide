@@ -1,106 +1,78 @@
-# 🚀 NextStep – Career Guide
+# 🚀 NextStep Career Guide — CI/CD, Kubernetes & Monitoring
 
-NextStep is a responsive career guidance platform designed to help students explore career paths, courses, branches, learning resources, internships, scholarships, and career opportunities.
+A complete DevOps implementation of the **NextStep Career Guide** application using **Docker, Jenkins, Kubernetes, Helm, Prometheus, and Grafana**.
 
-This project also demonstrates an end-to-end DevOps workflow for containerization, deployment, and monitoring.
+The project demonstrates how a web application can be containerized, automatically built and deployed through a CI/CD pipeline, managed using Kubernetes, packaged with Helm, and monitored using Prometheus and Grafana.
 
 ---
 
-## 🌟 Project Overview
+## 🏗️ Architecture
 
-NextStep provides a simple platform where students can explore different career options and make informed decisions about their education and career path.
-
-The application is built using HTML, CSS, and JavaScript and is containerized and deployed using modern DevOps tools.
+```text
+                         ┌─────────────────────┐
+                         │       GitHub        │
+                         │   Source Repository │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │       Jenkins       │
+                         │    CI/CD Pipeline   │
+                         └──────────┬──────────┘
+                                    │
+                           Build / Test / Deploy
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │       Docker        │
+                         │   Container Image   │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                    ┌──────────────────────────────┐
+                    │          Kubernetes          │
+                    │                              │
+                    │  ┌────────────────────────┐  │
+                    │  │   NextStep Application │  │
+                    │  │      2 Replicas        │  │
+                    │  └────────────────────────┘  │
+                    │                              │
+                    │  ┌────────────────────────┐  │
+                    │  │        Grafana          │  │
+                    │  │      Dashboard          │  │
+                    │  └────────────────────────┘  │
+                    │                              │
+                    │  ┌────────────────────────┐  │
+                    │  │       Prometheus       │  │
+                    │  │     Metrics Server     │  │
+                    │  └────────────────────────┘  │
+                    │                              │
+                    └──────────────────────────────┘
+```
 
 ---
 
 ## 🛠️ Technologies Used
 
-### Application
-- HTML5
-- CSS3
-- JavaScript
-
-### DevOps
-- Git
-- GitHub
-- Jenkins
-- Docker
-- Docker Hub
-- Kubernetes
-- Helm
-- Prometheus
-- Grafana
+| Technology | Purpose |
+|------------|---------|
+| HTML / CSS / JavaScript | NextStep Career Guide application |
+| Git & GitHub | Source code management |
+| Docker | Containerization |
+| Jenkins | CI/CD automation |
+| Kubernetes | Container orchestration |
+| Minikube | Local Kubernetes cluster |
+| Helm | Kubernetes package management |
+| Prometheus | Application and Kubernetes monitoring |
+| Grafana | Metrics visualization and dashboards |
+| NGINX | Web server / application serving |
 
 ---
 
-## 🔄 DevOps Workflow
+## 📂 Project Structure
 
 ```text
-GitHub
-   ↓
-Jenkins
-   ↓
-Docker
-   ↓
-Docker Hub
-   ↓
-Kubernetes
-   ↓
-Helm
-   ↓
-Prometheus
-   ↓
-Grafana
-
-
-🏗️ Architecture
-                    ┌──────────────┐
-                    │    GitHub    │
-                    │ Source Code  │
-                    └──────┬───────┘
-                           │
-                           ▼
-                    ┌──────────────┐
-                    │   Jenkins    │
-                    │     CI       │
-                    └──────┬───────┘
-                           │
-                           ▼
-                    ┌──────────────┐
-                    │    Docker    │
-                    │   Image      │
-                    └──────┬───────┘
-                           │
-                           ▼
-                    ┌──────────────┐
-                    │ Docker Hub   │
-                    │ Image Store  │
-                    └──────┬───────┘
-                           │
-                           ▼
-                 ┌────────────────────┐
-                 │     Kubernetes     │
-                 │                    │
-                 │  ┌──────┐ ┌──────┐│
-                 │  │ Pod  │ │ Pod  ││
-                 │  └──────┘ └──────┘│
-                 └─────────┬──────────┘
-                           │
-                           ▼
-                      ┌─────────┐
-                      │  Helm   │
-                      │ Deploy  │
-                      └────┬────┘
-                           │
-                ┌──────────┴──────────┐
-                ▼                     ▼
-         ┌─────────────┐       ┌─────────────┐
-         │ Prometheus  │──────▶│   Grafana   │
-         │  Metrics    │       │ Monitoring  │
-         └─────────────┘       └─────────────┘
-📁 Project Structure
-NextStep-career-guide/
+NextStep-Career-Guide/
 │
 ├── index.html
 ├── style.css
@@ -108,11 +80,12 @@ NextStep-career-guide/
 ├── Dockerfile
 ├── Jenkinsfile
 ├── deployment.yaml
+├── README.md
 │
 ├── nextstep/
-│   ├── .helmignore
 │   ├── Chart.yaml
 │   ├── values.yaml
+│   ├── .helmignore
 │   │
 │   └── templates/
 │       ├── deployment.yaml
@@ -127,227 +100,567 @@ NextStep-career-guide/
 │       └── tests/
 │           └── test-connection.yaml
 │
-└── README.md
-🔧 DevOps Implementation
-1. GitHub
+└── screenshots/
+    ├── nextstep-application.png
+    ├── jenkins-pipeline.png
+    ├── kubernetes-pods.png
+    ├── helm-deployment.png
+    ├── prometheus.png
+    └── grafana-dashboard.png
+```
 
-The project source code is maintained in GitHub.
+---
 
-Repository:
+# 🌐 NextStep Career Guide Application
 
-https://github.com/Swaroop-93/NextStep-career-guide
+NextStep is a career guidance web application designed to help users explore career-related information and opportunities.
 
-GitHub is used for source-code management and as the source repository for Jenkins.
+The application is containerized using Docker and deployed into Kubernetes.
 
-2. Jenkins
+### Application Screenshot
 
-Jenkins is used to create the CI pipeline.
+![NextStep Application](screenshots/nextstep-application.png)
 
-The Jenkins pipeline connects to the GitHub repository and checks out the project source code.
+---
 
-Jenkins Pipeline
-GitHub Repository
-       ↓
-   Jenkins
-       ↓
-    Checkout
-       ↓
-     Verify
+# 🔄 CI/CD Pipeline
 
-The Jenkinsfile is stored in the root of the repository.
+The project uses **Jenkins** to automate the application delivery process.
 
-3. Docker
-
-The NextStep application is containerized using Docker.
-
-The application is served using Nginx.
-
-Dockerfile
-FROM nginx:alpine
-
-COPY index.html /usr/share/nginx/html/
-COPY style.css /usr/share/nginx/html/
-COPY script.js /usr/share/nginx/html/
-
-EXPOSE 80
-Build Docker Image
-docker build -t nextstep-career-guide .
-Run Container
-docker run -d -p 8081:80 --name nextstep nextstep-career-guide
-4. Docker Hub
-
-The Docker image is published to Docker Hub.
-
-swaroop56/nextstep-career-guide:latest
-
-This image is later used by Kubernetes to deploy the application.
-
-☸️ Kubernetes
-
-The application is deployed to Kubernetes using Minikube.
-
-The deployment uses two replicas for the NextStep application.
-
-Kubernetes Deployment
-replicas: 2
-Apply Deployment
-kubectl apply -f deployment.yaml
-Check Pods
-kubectl get pods
-Expose Application
-kubectl expose deployment nextstep-deployment --type=NodePort --port=80
-⛵ Helm
-
-The NextStep Kubernetes deployment is packaged as a Helm chart.
-
-Helm provides a reusable and manageable way to deploy the application to Kubernetes.
-
-Create Helm Chart
-helm create nextstep
-Validate Chart
-helm lint ./nextstep
-Install
-helm install nextstep ./nextstep
-Upgrade
-helm upgrade nextstep ./nextstep
-Check Releases
-helm list
-
-The final deployment contains:
-
-nextstep
-prometheus
-grafana
-📊 Prometheus
-
-Prometheus is used for collecting Kubernetes and infrastructure metrics.
-
-Prometheus was installed using the Prometheus Community Helm chart.
-
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-
-helm repo update
-
-helm install prometheus prometheus-community/prometheus
-
-Prometheus was verified using the query:
-
-up
-
-The targets were returning healthy values.
-
-📈 Grafana
-
-Grafana is used to visualize the metrics collected by Prometheus.
-
-Grafana was installed using Helm.
-
-helm repo add grafana-community https://grafana-community.github.io/helm-charts
-
-helm repo update
-
-helm install grafana grafana-community/grafana
-
-Prometheus was configured as the Grafana data source.
-
-📊 NextStep Kubernetes Monitoring Dashboard
-
-A custom Grafana dashboard named:
-
-NextStep Kubernetes Monitoring
-
-was created.
-
-The dashboard contains:
-
-1. Total Kubernetes Pods
-count(kube_pod_info)
-2. Running Pods
-count(kube_pod_status_phase{phase="Running"})
-3. Node CPU Usage
-100 * (1 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m])))
-4. Node Memory Usage
-100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))
-5. NextStep Pod CPU Usage
-sum by (pod) (
-  rate(container_cpu_usage_seconds_total{
-    namespace="default",
-    pod=~"nextstep-.*",
-    container!="POD",
-    container!=""
-  }[5m])
-)
-6. NextStep Pod Memory Usage
-sum by (pod) (
-  container_memory_working_set_bytes{
-    namespace="default",
-    pod=~"nextstep-.*",
-    container!="POD",
-    container!=""
-  }
-)
-🚀 Running the Project
-Start Minikube
-minikube start --driver=docker
-Verify Kubernetes
-kubectl get nodes
-Deploy Using Helm
-helm install nextstep ./nextstep
-Verify Deployment
-kubectl get pods
-Check Helm Releases
-helm list
-🔍 Project Verification
-
-The final environment contains:
-
-NextStep Application
-      │
-      ├── 2 Kubernetes Pods
-      │
-      ├── Helm Deployment
-      │
-      ├── Prometheus Monitoring
-      │
-      └── Grafana Dashboard
-
-The application was successfully deployed and monitored using Kubernetes, Helm, Prometheus, and Grafana.
-
-🎯 Key DevOps Skills Demonstrated
-Git and GitHub source-code management
-Jenkins CI
-Docker containerization
-Docker image management
-Docker Hub
-Kubernetes deployments
-Kubernetes services
-Kubernetes replicas
-Helm charts
-Helm deployment and upgrades
-Prometheus monitoring
-PromQL
-Grafana dashboards
-Kubernetes resource monitoring
-👨‍💻 Author
-
-Swaroop
-
-GitHub:
-
-https://github.com/Swaroop-93
-
-⭐ Project Highlights
-
-Built a career guidance platform and implemented an end-to-end DevOps workflow using GitHub, Jenkins, Docker, Docker Hub, Kubernetes, Helm, Prometheus, and Grafana.
-
-
-### One change I recommend
-
-Don't manually type this entire README into GitHub's browser editor. Since your project is already in:
+### Pipeline Flow
 
 ```text
-E:\NextStep-CICD
+Developer
+    │
+    ▼
+GitHub
+    │
+    ▼
+Jenkins
+    │
+    ├── Checkout Source Code
+    │
+    ├── Build Docker Image
+    │
+    ├── Run Application
+    │
+    └── Deploy to Kubernetes
+    │
+    ▼
+Kubernetes
+    │
+    ▼
+NextStep Application
+```
 
-we should create/update the actual README.md file locally, then commit and push it just like we did with the Helm files.
+### Jenkins Pipeline Screenshot
 
-If you want, I'll give you the exact PowerShell commands to create the README file and push it to GitHub, one step at a time.
+![Jenkins Pipeline](screenshots/jenkins-pipeline.png)
+
+---
+
+# 🐳 Docker
+
+The application is packaged into a Docker container.
+
+Docker provides a consistent environment for running the NextStep application across different systems.
+
+### Dockerfile
+
+The project contains a `Dockerfile` that defines how the application container is built.
+
+```text
+Source Code
+     │
+     ▼
+ Dockerfile
+     │
+     ▼
+Docker Image
+     │
+     ▼
+Docker Container
+```
+
+---
+
+# ☸️ Kubernetes Deployment
+
+The application is deployed to a Kubernetes cluster using **Minikube**.
+
+Kubernetes manages the application containers and ensures the desired number of replicas are running.
+
+### Kubernetes Components
+
+```text
+Kubernetes Cluster
+│
+├── NextStep Deployment
+│   └── 2 Application Pods
+│
+├── NextStep Service
+│   └── NodePort
+│
+├── Grafana
+│   └── Monitoring Dashboard
+│
+└── Prometheus
+    ├── Prometheus Server
+    ├── Alertmanager
+    ├── Node Exporter
+    └── Kube State Metrics
+```
+
+### Kubernetes Pods
+
+The following Kubernetes components are running in the cluster:
+
+```text
+NextStep Application Pods
+Grafana Pod
+Prometheus Server
+Prometheus Alertmanager
+Kube State Metrics
+Node Exporter
+Pushgateway
+NGINX / Supporting Services
+```
+
+### Kubernetes Pods Screenshot
+
+![Kubernetes Pods](screenshots/kubernetes-pods.png)
+
+---
+
+# 📦 Helm Deployment
+
+The NextStep application is packaged as a **Helm chart**.
+
+Helm makes Kubernetes deployment easier by managing Kubernetes manifests as a reusable package.
+
+### Helm Chart Structure
+
+```text
+nextstep/
+│
+├── Chart.yaml
+├── values.yaml
+├── .helmignore
+│
+└── templates/
+    ├── deployment.yaml
+    ├── service.yaml
+    ├── serviceaccount.yaml
+    ├── ingress.yaml
+    ├── hpa.yaml
+    ├── httproute.yaml
+    ├── _helpers.tpl
+    ├── NOTES.txt
+    │
+    └── tests/
+        └── test-connection.yaml
+```
+
+### Helm Releases
+
+The project contains the following Helm deployments:
+
+```text
+grafana
+nextstep
+prometheus
+```
+
+Example:
+
+```bash
+helm list
+```
+
+Expected result:
+
+```text
+NAME         NAMESPACE   STATUS
+grafana      default     deployed
+nextstep     default     deployed
+prometheus   default     deployed
+```
+
+### Helm Deployment Screenshot
+
+![Helm Deployment](screenshots/helm-deployment.png)
+
+---
+
+# 📊 Prometheus Monitoring
+
+**Prometheus** is used to collect and store metrics from the Kubernetes environment.
+
+The monitoring stack includes:
+
+```text
+Prometheus
+│
+├── Prometheus Server
+├── Alertmanager
+├── Node Exporter
+├── Kube State Metrics
+└── Pushgateway
+```
+
+Prometheus collects metrics related to Kubernetes resources and application infrastructure.
+
+### Prometheus Screenshot
+
+![Prometheus Monitoring](screenshots/prometheus.png)
+
+---
+
+# 📈 Grafana Dashboard
+
+**Grafana** is connected to Prometheus as the data source and is used to visualize Kubernetes metrics.
+
+The dashboard provides visibility into:
+
+- Kubernetes Pods
+- Running Pods
+- Total Pods
+- Application metrics
+- Prometheus metrics
+- Cluster monitoring information
+
+### Grafana Dashboard Screenshot
+
+![Grafana Dashboard](screenshots/grafana-dashboard.png)
+
+---
+
+# 📊 Monitoring Dashboard
+
+The project includes a custom Grafana dashboard:
+
+```text
+NextStep Kubernetes Monitoring
+```
+
+The dashboard contains panels such as:
+
+```text
+┌──────────────────────────────┐
+│     Kubernetes Metrics       │
+├──────────────────────────────┤
+│                              │
+│  Total Kubernetes Pods: 23   │
+│                              │
+└──────────────────────────────┘
+
+┌──────────────────────────────┐
+│       Running Pods           │
+├──────────────────────────────┤
+│                              │
+│             23               │
+│                              │
+└──────────────────────────────┘
+```
+
+This provides a centralized view of the Kubernetes environment.
+
+---
+
+# 🔧 Kubernetes Commands Used
+
+### Check Minikube
+
+```bash
+minikube status
+```
+
+### Start Minikube
+
+```bash
+minikube start
+```
+
+### Check Pods
+
+```bash
+kubectl get pods
+```
+
+### Check Services
+
+```bash
+kubectl get services
+```
+
+### Check Deployments
+
+```bash
+kubectl get deployments
+```
+
+### Check Helm Releases
+
+```bash
+helm list
+```
+
+### Access NextStep Application
+
+```bash
+minikube service nextstep
+```
+
+### Access Grafana
+
+```bash
+kubectl port-forward service/grafana 3000:80
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# 🚀 Helm Commands
+
+### Install NextStep
+
+```bash
+helm install nextstep ./nextstep
+```
+
+### Upgrade NextStep
+
+```bash
+helm upgrade nextstep ./nextstep
+```
+
+### Check Helm Releases
+
+```bash
+helm list
+```
+
+### Check Helm Status
+
+```bash
+helm status nextstep
+```
+
+### Uninstall
+
+```bash
+helm uninstall nextstep
+```
+
+---
+
+# 🔍 Useful Kubernetes Troubleshooting Commands
+
+### View Pod Status
+
+```bash
+kubectl get pods
+```
+
+### View Detailed Pod Information
+
+```bash
+kubectl describe pod <pod-name>
+```
+
+### View Application Logs
+
+```bash
+kubectl logs <pod-name>
+```
+
+### View Deployment Status
+
+```bash
+kubectl get deployments
+```
+
+### View Services
+
+```bash
+kubectl get services
+```
+
+### View All Resources
+
+```bash
+kubectl get all
+```
+
+---
+
+# 📁 Kubernetes Resources
+
+The project uses Kubernetes resources including:
+
+```text
+Deployment
+Service
+ServiceAccount
+Ingress
+HorizontalPodAutoscaler
+Config / Helm Values
+```
+
+---
+
+# 🔐 Monitoring Architecture
+
+```text
+              Kubernetes Cluster
+                     │
+          ┌──────────┴──────────┐
+          │                     │
+          ▼                     ▼
+   NextStep Pods           Kubernetes Metrics
+          │                     │
+          │              Kube State Metrics
+          │                     │
+          └──────────┬──────────┘
+                     ▼
+                Prometheus
+                     │
+                     ▼
+                  Grafana
+                     │
+                     ▼
+             Monitoring Dashboard
+```
+
+---
+
+# 🎯 Project Objectives
+
+The main objectives of this project are:
+
+- Build a real-world DevOps workflow
+- Containerize a web application using Docker
+- Automate deployment using Jenkins
+- Deploy applications using Kubernetes
+- Package Kubernetes resources using Helm
+- Monitor Kubernetes workloads using Prometheus
+- Visualize metrics using Grafana
+- Understand CI/CD and cloud-native deployment practices
+- Implement basic observability for an application
+
+---
+
+# 💡 Key DevOps Concepts Demonstrated
+
+```text
+✅ Git & GitHub
+✅ Source Code Management
+✅ Docker Containerization
+✅ CI/CD
+✅ Jenkins
+✅ Kubernetes
+✅ Minikube
+✅ Helm
+✅ Kubernetes Deployments
+✅ Kubernetes Services
+✅ Prometheus
+✅ Grafana
+✅ Monitoring
+✅ Observability
+```
+
+---
+
+# 🏆 Project Outcome
+
+The completed project demonstrates an end-to-end DevOps workflow:
+
+```text
+Developer
+    │
+    ▼
+GitHub
+    │
+    ▼
+Jenkins CI/CD
+    │
+    ▼
+Docker
+    │
+    ▼
+Kubernetes
+    │
+    ├───────────────┐
+    ▼               ▼
+NextStep         Monitoring
+Application          │
+    │                │
+    │          ┌─────┴─────┐
+    │          ▼           ▼
+    │     Prometheus    Grafana
+    │          │           │
+    └──────────┴───────────┘
+                │
+                ▼
+        Kubernetes Monitoring
+```
+
+---
+
+# 📸 Project Screenshots
+
+## 1️⃣ NextStep Application
+
+![NextStep Application](screenshots/nextstep-application.png)
+
+## 2️⃣ Jenkins CI/CD Pipeline
+
+![Jenkins Pipeline](screenshots/jenkins-pipeline.png)
+
+## 3️⃣ Kubernetes Pods
+
+![Kubernetes Pods](screenshots/kubernetes-pods.png)
+
+## 4️⃣ Helm Deployment
+
+![Helm Deployment](screenshots/helm-deployment.png)
+
+## 5️⃣ Prometheus
+
+![Prometheus](screenshots/prometheus.png)
+
+## 6️⃣ Grafana Dashboard
+
+![Grafana Dashboard](screenshots/grafana-dashboard.png)
+
+---
+
+# 📌 Project Summary
+
+**NextStep Career Guide** is a DevOps-focused project demonstrating how a web application can be developed, containerized, continuously deployed, orchestrated, and monitored using modern DevOps tools.
+
+The project brings together:
+
+**GitHub → Jenkins → Docker → Kubernetes → Helm → Prometheus → Grafana**
+
+This project demonstrates practical knowledge of **CI/CD, containerization, Kubernetes orchestration, Helm deployments, monitoring, and observability**.
+
+---
+
+# 👨‍💻 Author
+
+**Swaroop**
+
+GitHub:  
+https://github.com/Swaroop-93/NextStep-career-guide
+
+---
+
+# ⭐ If you found this project useful
+
+Feel free to ⭐ the repository and explore the implementation.
